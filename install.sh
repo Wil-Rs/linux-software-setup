@@ -109,6 +109,7 @@ code --install-extension mattedesign.laravel-pack
 code --install-extension usernamehw.errorlens
 code --install-extension PKief.material-icon-theme
 code --install-extension natqe.reload
+code --install-extension eamodio.gitlens
 
 echo "#######################################################";
 echo "################# Instalando dbeaver ##################";
