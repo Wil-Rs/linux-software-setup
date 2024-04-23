@@ -44,19 +44,44 @@ echo "#######################################################";
 echo "################## Instalando mysql ###################";
 echo "#######################################################";
 
+# instalando o mysql
+sudo apt-get install mysql-server -y
+
 sleep 1
 
 echo "#######################################################";
 echo "################### Instalando git ####################";
 echo "#######################################################";
 
-sleep 1
-
 # instalando o git
 sudo apt-get install git -y
 
-# instalando o mysql
-sudo apt-get install mysql-server -y
+sleep 1
+
+echo "#######################################################";
+echo "################ Instalando PHP 8.3 ###################";
+echo "#######################################################";
+
+sudo apt install software-properties-common
+sudo add-apt-repository ppa:ondrej/php
+sudo apt update
+sudo apt install php8.3 -y
+sudo apt install php8.3-common php8.3-mysql php8.3-xml php8.3-xmlrpc php8.3-curl php8.3-gd php8.3-imagick php8.3-cli php8.3-dev php8.3-imap php8.3-mbstring php8.3-opcache php8.3-soap php8.3-zip php8.3-intl -y
+
+sleep 1
+
+echo "#######################################################";
+echo "############### Instalando composer ###################";
+echo "#######################################################";
+
+# instalando composer
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('sha384', 'composer-setup.php') === 'dac665fdc30fdd8ec78b38b9800061b4150413ff2e3b6f88543c636f7cd84f6db9189d43a81e5503cda447da73c7e5b6') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+php composer-setup.php
+php -r "unlink('composer-setup.php');"
+sudo mv composer.phar /usr/local/bin/composer
+
+sleep 1
 
 echo "#######################################################";
 echo "################## Instalando vscode ##################";
@@ -95,6 +120,25 @@ rm -R "$folder"
 
 # Copia as configurações de monitores para o GDM +- defini o login no monitor principal
 sudo cp .config/monitors.xml /var/lib/gdm3/.config/ #pop_os #ubuntu #debian
+
+echo "#######################################################";
+echo "################# Instalando apache ###################";
+echo "#######################################################";
+
+# instalando apache
+sudo apt-get install apache2 -y
+
+sleep 1
+
+echo "#######################################################";
+echo "################ Instalando discord ###################";
+echo "#######################################################";
+
+# instalando discord
+wget -c "https://discord.com/api/download?platform=linux&format=deb" -O discord.deb
+sudo dpkg -i discord.deb
+
+sleep 1
 
 echo "#######################################################";
 echo "################### Instalando zsh ####################";
