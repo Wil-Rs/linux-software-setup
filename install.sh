@@ -12,6 +12,11 @@ sudo apt-get update -y
 # atualizando os pacotes
 sudo apt-get upgrade -y
 
+# criando um grupo
+sudo addgroup dev
+# add user ao grupo
+sudo adduser $USER dev
+
 echo "#######################################################";
 echo "################ EXECUTANDO INSTALAÇAO ################";
 echo "#######################################################";
@@ -127,6 +132,7 @@ echo "#######################################################";
 
 # instalando apache
 sudo apt-get install apache2 -y
+sudo a2enmod rewrite # habilitando a reescrita
 
 sleep 1
 
@@ -171,6 +177,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 # add 
 echo "Edite o arquivo .zshrc e add \nplugins=(git zsh-autosuggestions zsh-syntax-highlighting) \ndepois de um reboot na maquina" | gedit -
+echo "Não esquece de arrumar a senha do mysql com \nALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'senha_aqui'; | gedit -
 
 echo "#######################################################";
 echo "################ INSTALAÇAO FINALIZADA ################";
