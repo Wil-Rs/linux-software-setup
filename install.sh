@@ -113,6 +113,7 @@ code --install-extension usernamehw.errorlens
 code --install-extension PKief.material-icon-theme
 code --install-extension natqe.reload
 code --install-extension eamodio.gitlens
+code --install-extension codingyu.laravel-goto-view
 
 echo "#######################################################";
 echo "################# Instalando dbeaver ##################";
