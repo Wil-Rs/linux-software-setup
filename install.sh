@@ -61,6 +61,9 @@ echo "#######################################################";
 # instalando o git
 sudo apt-get install git -y
 
+# instalando o git flow
+sudo apt-get install git-flow -y
+
 sleep 1
 
 echo "#######################################################";
