@@ -92,6 +92,15 @@ sudo mv composer.phar /usr/local/bin/composer
 sleep 1
 
 echo "#######################################################";
+echo "################ Instalando insomnia ##################";
+echo "#######################################################";
+
+wget -c "https://updates.insomnia.rest/downloads/ubuntu/latest?&app=com.insomnia.app&source=website" -O insomnia.deb
+sudo dpkg -i insomnia.deb
+
+sleep 1
+
+echo "#######################################################";
 echo "################## Instalando vscode ##################";
 echo "#######################################################";
 
