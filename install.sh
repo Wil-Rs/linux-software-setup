@@ -142,6 +142,15 @@ sudo a2enmod rewrite # habilitando a reescrita
 sleep 1
 
 echo "#######################################################";
+echo "################## Instalando nvm ####################";
+echo "#######################################################";
+
+# instalando nvm
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+
+sleep 1
+
+echo "#######################################################";
 echo "################ Instalando discord ###################";
 echo "#######################################################";
 
